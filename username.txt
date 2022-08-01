@@ -1,0 +1,3 @@
+  username	password	dob	phonenumber	gmail
+1  naren	1234	  19,feb,2002	987654321	naren@gmail.com
+2  rohith	1235	  20,mar,2003	123456789	rohith@gmail.com

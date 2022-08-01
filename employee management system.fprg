@@ -1,0 +1,777 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Narendran"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-05 02:22:44 PM"/>
+        <attribute name="created" value="TmFyZW5kcmFuO0RFU0tUT1AtOE5LTThSUzsyMDIxLTAxLTAyOzA0OjE5OjUzIFBNOzMyODU="/>
+        <attribute name="edited" value="TmFyZW5kcmFuO0RFU0tUT1AtOE5LTThSUzsyMDIxLTAyLTA1OzAyOjIyOjQ0IFBNOzQ2OzM0NDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="username, newusername, oldusername, event, l, emploevent, emploeventmonth, managername" type="String" array="False" size=""/>
+            <declare name="managerpassword, a, b, c, usernamecheck, userpassword, passwordcheck, d, e, f, g, h, useroldpassword, usernewpassword, manageperinfo, i, k, m, o, p, emploeventdate, leavegranted, leaveagreed, netsalary1, s, v, w, x, y, z, infoaddn, managerpasswordcheck, managernamecheck, editinfo, editmenu, manageinfo, serialnum, atta, info, performance, n, l1, a1, training, newdob, newphonenum, at, perf" type="Integer" array="False" size=""/>
+            <declare name="username1, leavemonth, infoadd, editinfoadd, month, emploperf, j, u, previouswork" type="String" array="True" size="100"/>
+            <declare name="password, leavedate, payments, editpayments, dedection, editdedection, salarygiven, editsalarygiven, netsalary, duration, editduration, leave, date, q, r, allowance, due, loan, phonenum, experience" type="Integer" array="True" size="100"/>
+            <declare name="entrytime, exittime, dob" type="Real" array="True" size="100"/>
+            <assign variable="at" expression="0"/>
+            <assign variable="perf" expression="0"/>
+            <assign variable="training" expression="0"/>
+            <assign variable="leaveagreed" expression="0"/>
+            <assign variable="p" expression="0"/>
+            <assign variable="x" expression="0"/>
+            <assign variable="w" expression="0"/>
+            <assign variable="x" expression="0"/>
+            <assign variable="f" expression="0"/>
+            <assign variable="s" expression="0"/>
+            <assign variable="managerpassword" expression="11"/>
+            <do expression="y==1">
+                <output expression="&quot;For user pannel features press 1&quot;" newline="True"/>
+                <output expression="&quot;For adminstration panel features press 2&quot;" newline="True"/>
+                <input variable="a"/>
+                <if expression="a==1">
+                    <then>
+                        <output expression="&quot;USER PANEL FEATURES&quot;" newline="True"/>
+                        <output expression="&quot;enter your serial number&quot;" newline="True"/>
+                        <input variable="e"/>
+                        <output expression="&quot;ENTER USER NAME&quot;" newline="True"/>
+                        <input variable="username"/>
+                        <do expression="usernamecheck==1">
+                            <if expression="username1[e]==username">
+                                <then>
+                                    <assign variable="usernamecheck" expression="3"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;you have entered a wrong username&quot;" newline="True"/>
+                                    <output expression="&quot;press 1 to reenter your username press 2 to exit&quot;" newline="True"/>
+                                    <input variable="usernamecheck"/>
+                                </else>
+                            </if>
+                        </do>
+                        <if expression="usernamecheck==3">
+                            <then/>
+                            <else>
+                                <breakpoint/>
+                            </else>
+                        </if>
+                        <output expression="&quot;ENTER DIGIT PASSWORD&quot;" newline="True"/>
+                        <input variable="userpassword"/>
+                        <do expression="passwordcheck==1">
+                            <if expression="password[e]==userpassword">
+                                <then>
+                                    <assign variable="passwordcheck" expression="3"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;you have entered a wrong password&quot;" newline="True"/>
+                                    <output expression="&quot;press 1 to reenter password and press 2 to exit&quot;" newline="True"/>
+                                    <input variable="passwordcheck"/>
+                                </else>
+                            </if>
+                        </do>
+                        <if expression="passwordcheck==3">
+                            <then/>
+                            <else>
+                                <breakpoint/>
+                            </else>
+                        </if>
+                        <do expression="z==1">
+                            <output expression="&quot;for updating password press 1&quot;" newline="True"/>
+                            <output expression="&quot;manage persnal information press 2&quot;" newline="True"/>
+                            <output expression="&quot;view salary press 3&quot;" newline="True"/>
+                            <output expression="&quot;manage attendance press 4&quot;" newline="True"/>
+                            <output expression="&quot;view events press 5&quot;" newline="True"/>
+                            <output expression="&quot;manage leave press 6&quot;" newline="True"/>
+                            <output expression="&quot;log out press 7&quot;" newline="True"/>
+                            <input variable="d"/>
+                            <if expression="d==1">
+                                <then>
+                                    <do expression="b==1">
+                                        <output expression="&quot;enter your old  digit password&quot;" newline="True"/>
+                                        <input variable="useroldpassword"/>
+                                        <if expression="useroldpassword==userpassword">
+                                            <then>
+                                                <output expression="&quot;enter your new four digit password&quot;" newline="True"/>
+                                                <input variable="usernewpassword"/>
+                                                <output expression="&quot;your password has been updated&quot;" newline="True"/>
+                                                <assign variable="userpassword" expression="usernewpassword"/>
+                                                <assign variable="password[e]" expression="usernewpassword"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot; you have entered a wrong password&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                        <output expression="&quot;press 1 to continue to update password menu&quot;" newline="True"/>
+                                        <output expression="&quot;anyothe number to exit&quot;" newline="True"/>
+                                        <input variable="b"/>
+                                    </do>
+                                </then>
+                                <else>
+                                    <if expression="d==2">
+                                        <then>
+                                            <do expression="c==1">
+                                                <output expression="&quot;manage personal information&quot;" newline="True"/>
+                                                <output expression="&quot;press 1 to view information&quot;" newline="True"/>
+                                                <output expression="&quot;press 2 to update information&quot;" newline="True"/>
+                                                <input variable="manageperinfo"/>
+                                                <if expression="manageperinfo==1">
+                                                    <then>
+                                                        <output expression="&quot;your serialnumber is&quot; &amp; e" newline="True"/>
+                                                        <output expression="&quot;USER NAME IS&quot; &amp; username" newline="True"/>
+                                                        <output expression="&quot; PASSWORD is&quot; &amp; userpassword" newline="True"/>
+                                                        <if expression="infoaddn==1">
+                                                            <then>
+                                                                <output expression="infoadd[serialnum]" newline="True"/>
+                                                                <output expression="&quot;date of birth is&quot; &amp; dob[e]" newline="True"/>
+                                                                <output expression="&quot;phone number is&quot; &amp; phonenum[e]" newline="True"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                        <if expression="training==1">
+                                                            <then>
+                                                                <output expression="&quot;previously worked at&quot; &amp; previouswork[e] &amp; &quot;with an experience of&quot; &amp; experience[e]" newline="True"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                        <if expression="perf==1">
+                                                            <then>
+                                                                <output expression="&quot;performance&quot; &amp;emploperf[e]" newline="True"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="manageperinfo==2">
+                                                            <then>
+                                                                <output expression="&quot;press 1 to change username&#13;&#10;press 2 to change dob&#13;&#10;press3 to change phonenum&quot;" newline="True"/>
+                                                                <if expression="d==1">
+                                                                    <then>
+                                                                        <output expression="&quot;enter ur old username&quot;" newline="True"/>
+                                                                        <input variable="oldusername"/>
+                                                                        <if expression="oldusername==username">
+                                                                            <then>
+                                                                                <output expression="&quot;enter your new user name&quot;" newline="True"/>
+                                                                                <input variable="newusername"/>
+                                                                                <assign variable="username" expression="newusername"/>
+                                                                                <assign variable="username1[e]" expression="newusername"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <output expression="&quot;yu have entered a wrong user name&quot;" newline="True"/>
+                                                                            </else>
+                                                                        </if>
+                                                                    </then>
+                                                                    <else>
+                                                                        <if expression="d==2">
+                                                                            <then>
+                                                                                <output expression="&quot;enter the new dob&quot;" newline="True"/>
+                                                                                <input variable="newdob"/>
+                                                                                <assign variable="dob[e]" expression="newdob"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <if expression="d==3">
+                                                                                    <then>
+                                                                                        <output expression="&quot;enter the new phonenumber&quot;" newline="True"/>
+                                                                                        <input variable="newphonenum"/>
+                                                                                        <assign variable="phonenum[e]" expression="newphonenum"/>
+                                                                                    </then>
+                                                                                    <else/>
+                                                                                </if>
+                                                                            </else>
+                                                                        </if>
+                                                                    </else>
+                                                                </if>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                                <output expression="&quot;press 1 to go back to manage personal information menu&quot;" newline="True"/>
+                                                <output expression="&quot;press anyother number to exit&quot;" newline="True"/>
+                                                <input variable="c"/>
+                                            </do>
+                                        </then>
+                                        <else>
+                                            <if expression="d==3">
+                                                <then>
+                                                    <if expression="s==1">
+                                                        <then/>
+                                                        <else>
+                                                            <for variable="s" start="0" end="p-1" direction="inc" step="1">
+                                                                <assign variable="q[s]" expression="0"/>
+                                                            </for>
+                                                        </else>
+                                                    </if>
+                                                    <call expression="salarydetails(e,payments,dedection,netsalary,duration)"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="d==4">
+                                                        <then>
+                                                            <if expression="at==1">
+                                                                <then>
+                                                                    <call expression="manageattendance(e,date,month,entrytime,exittime)"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;no attendance updated&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="d==5">
+                                                                <then>
+                                                                    <if expression="w=1">
+                                                                        <then>
+                                                                            <call expression="employeeevent(emploevent,emploeventdate,emploeventmonth)"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;no new events&quot;" newline="True"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="d==6">
+                                                                        <then>
+                                                                            <output expression="&quot;enter the reason for the necessory of leave&quot;" newline="True"/>
+                                                                            <input variable="j[e]"/>
+                                                                            <output expression="&quot;enter the date in which user request leave from&quot;" newline="True"/>
+                                                                            <input variable="q[e]"/>
+                                                                            <output expression="&quot;enter the end date upti which leave must be requested&quot;" newline="True"/>
+                                                                            <input variable="r[e]"/>
+                                                                            <output expression="&quot;enter the month of the leave requestedin words&quot;" newline="True"/>
+                                                                            <input variable="u[e]"/>
+                                                                            <output expression="&quot;your request has been submitted&quot;" newline="True"/>
+                                                                            <assign variable="x" expression="x+1"/>
+                                                                            <assign variable="n" expression="x"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="d==7">
+                                                                                <then>
+                                                                                    <output expression="&quot;logging out &quot;" newline="True"/>
+                                                                                </then>
+                                                                                <else/>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                            <output expression="&quot;THANK YOU&quot;" newline="True"/>
+                            <output expression="&quot;press 1 to continue to user panel features&quot;" newline="True"/>
+                            <output expression="&quot;any other to end&quot;" newline="True"/>
+                            <input variable="z"/>
+                        </do>
+                    </then>
+                    <else>
+                        <if expression="a==2">
+                            <then>
+                                <output expression="&quot;ADMINISTRATION PANEL&quot;" newline="True"/>
+                                <output expression="&quot;enter your user name&quot;" newline="True"/>
+                                <input variable="l"/>
+                                <do expression="managerpasswordcheck==1">
+                                    <output expression="&quot;enter your password&quot;" newline="True"/>
+                                    <input variable="k"/>
+                                    <if expression="k==managerpassword">
+                                        <then>
+                                            <assign variable="managerpasswordcheck" expression="3"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;you have entered a wrong password&quot;" newline="True"/>
+                                            <output expression="&quot;press 1 to reenter your password and 2 to end&quot;" newline="True"/>
+                                            <input variable="managerpasswordcheck"/>
+                                        </else>
+                                    </if>
+                                </do>
+                                <if expression="managerpasswordcheck==3">
+                                    <then/>
+                                    <else>
+                                        <output expression="&quot;you have entered a wrong password&quot;" newline="True"/>
+                                        <breakpoint/>
+                                    </else>
+                                </if>
+                                <do expression="z==1">
+                                    <output expression="&quot;add new user press 1&quot;" newline="True"/>
+                                    <output expression="&quot;manage employee personal information press 2&quot;" newline="True"/>
+                                    <output expression="&quot;manage employee finance press 3&quot;" newline="True"/>
+                                    <output expression="&quot;manage employee attendence press 4&quot;" newline="True"/>
+                                    <output expression="&quot;manage events press 5&quot;" newline="True"/>
+                                    <output expression="&quot;manage employee leave press 6&quot;" newline="True"/>
+                                    <output expression="&quot;manage employee training record press 7&quot;" newline="True"/>
+                                    <output expression="&quot;manage employee performance press 8&quot;" newline="True"/>
+                                    <output expression="&quot; lof out press 9&quot;" newline="True"/>
+                                    <input variable="m"/>
+                                    <if expression="m==1">
+                                        <then>
+                                            <output expression="&quot;enter the number of user to be added&quot;" newline="True"/>
+                                            <input variable="p"/>
+                                            <for variable="s" start="0" end="p-1" direction="inc" step="1">
+                                                <output expression="&quot;enter the user name&quot; &amp; s+1" newline="True"/>
+                                                <input variable="username1[s]"/>
+                                                <output expression="&quot;enter the password of username &quot; &amp;  username1[s]" newline="True"/>
+                                                <input variable="password[s]"/>
+                                                <output expression="&quot;serial number for the user of username&quot; &amp;username1[s] &amp; &quot;  is &quot; &amp; s" newline="True"/>
+                                            </for>
+                                            <output expression="&quot;user name and password has been added&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="m==2">
+                                                <then>
+                                                    <do expression="manageinfo==1">
+                                                        <output expression="&quot;press 1 to add information&quot;" newline="True"/>
+                                                        <output expression="&quot;press 2 to remove information&quot;" newline="True"/>
+                                                        <output expression="&quot;press 3 to edit information&quot;" newline="True"/>
+                                                        <input variable="p"/>
+                                                        <if expression="p==1">
+                                                            <then>
+                                                                <do expression="info==1">
+                                                                    <output expression="&quot;enter the serial number of the user&quot;" newline="True"/>
+                                                                    <input variable="serialnum"/>
+                                                                    <output expression="&quot;enter the info to be added&quot;" newline="True"/>
+                                                                    <output expression="&quot;enter general information&quot;" newline="True"/>
+                                                                    <input variable="infoadd[serialnum]"/>
+                                                                    <output expression="&quot;enter the phone number&quot;" newline="True"/>
+                                                                    <input variable="phonenum[serialnum]"/>
+                                                                    <output expression="&quot;enter the dob&quot;" newline="True"/>
+                                                                    <input variable="dob[serialnum]"/>
+                                                                    <output expression="&quot;enter the salary to be given&quot;" newline="True"/>
+                                                                    <input variable="salarygiven[serialnum]"/>
+                                                                    <output expression="&quot;enter the payments&quot;" newline="True"/>
+                                                                    <input variable="payments[serialnum]"/>
+                                                                    <output expression="&quot;enter the dedection amount&quot;" newline="True"/>
+                                                                    <input variable="dedection[serialnum]"/>
+                                                                    <output expression="&quot;netsalary is&quot;" newline="True"/>
+                                                                    <assign variable="netsalary1" expression="salarygiven[serialnum]+payments[serialnum]-dedection[serialnum]"/>
+                                                                    <assign variable="netsalary[serialnum]" expression="netsalary1"/>
+                                                                    <output expression="netsalary[serialnum]" newline="True"/>
+                                                                    <output expression="&quot;enter the duration upto which the employee will be provided job&quot;" newline="True"/>
+                                                                    <input variable="duration[serialnum]"/>
+                                                                    <output expression="&quot;press 1 to add information for other user and anyother number to exit&quot;" newline="True"/>
+                                                                    <input variable="info"/>
+                                                                </do>
+                                                                <assign variable="infoaddn" expression="1"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="p==2">
+                                                                    <then>
+                                                                        <do expression="info==1">
+                                                                            <output expression="&quot;enter the serial number of the user&quot;" newline="True"/>
+                                                                            <input variable="serialnum"/>
+                                                                            <call expression="editinfo(serialnum,infoadd,salarygiven,payments,dedection)"/>
+                                                                            <output expression="&quot;press 1 to return to delete menu &#13;&#10;and anyother key to exit&quot;" newline="True"/>
+                                                                            <input variable="info"/>
+                                                                            <assign variable="s" expression="0"/>
+                                                                        </do>
+                                                                    </then>
+                                                                    <else>
+                                                                        <if expression="p==3">
+                                                                            <then>
+                                                                                <do expression="editmenu==1">
+                                                                                    <output expression="&quot;edit info&quot;" newline="True"/>
+                                                                                    <output expression="&quot;enter the serialnumber of the user&quot;" newline="True"/>
+                                                                                    <input variable="serialnum"/>
+                                                                                    <output expression="&quot;press 1 to edit general information&quot;" newline="True"/>
+                                                                                    <output expression="&quot;press 2 to edit salary&quot;" newline="True"/>
+                                                                                    <output expression="&quot;press 3 to editpayments&quot;" newline="True"/>
+                                                                                    <output expression="&quot;press 4 to edit dedection&quot;" newline="True"/>
+                                                                                    <output expression="&quot;press 5 to edit duration&quot;" newline="True"/>
+                                                                                    <input variable="editinfo"/>
+                                                                                    <if expression="editinfo==1">
+                                                                                        <then>
+                                                                                            <output expression="&quot;enter the general information that must be edited&quot;" newline="True"/>
+                                                                                            <input variable="editinfoadd[serialnum]"/>
+                                                                                            <assign variable="editinfo[serialnum]" expression="editinfoadd[serialnum]"/>
+                                                                                        </then>
+                                                                                        <else>
+                                                                                            <if expression="editinfo==2">
+                                                                                                <then>
+                                                                                                    <output expression="&quot;enter the edited salary&quot;" newline="True"/>
+                                                                                                    <input variable="editsalarygiven[serialnum]"/>
+                                                                                                    <assign variable="salarygiven[serialnum]" expression="editsalarygiven[serialnum]"/>
+                                                                                                </then>
+                                                                                                <else>
+                                                                                                    <if expression="editinfo==3">
+                                                                                                        <then>
+                                                                                                            <output expression="&quot;enter the edited payment&quot;" newline="True"/>
+                                                                                                            <input variable="editpayments[serialnum]"/>
+                                                                                                            <assign variable="payments[serialnum]" expression="editpayments[serialnum]"/>
+                                                                                                        </then>
+                                                                                                        <else>
+                                                                                                            <if expression="editinfo==4">
+                                                                                                                <then>
+                                                                                                                    <output expression="&quot;enter the edited dedection&quot;" newline="True"/>
+                                                                                                                    <input variable="editdedection[serialnum]"/>
+                                                                                                                    <assign variable="dedection[serialnum]" expression="editdedection[serialnum]"/>
+                                                                                                                </then>
+                                                                                                                <else>
+                                                                                                                    <if expression="editinfo==5">
+                                                                                                                        <then>
+                                                                                                                            <output expression="&quot;enter the edited duration&quot;" newline="True"/>
+                                                                                                                            <input variable="editduration[serialnum]"/>
+                                                                                                                            <assign variable="duration[serialnum]" expression="editduration[serialnum]"/>
+                                                                                                                        </then>
+                                                                                                                        <else/>
+                                                                                                                    </if>
+                                                                                                                </else>
+                                                                                                            </if>
+                                                                                                        </else>
+                                                                                                    </if>
+                                                                                                </else>
+                                                                                            </if>
+                                                                                        </else>
+                                                                                    </if>
+                                                                                    <output expression="&quot;press 1 to enter back to edit menu and anyohter number to exit&quot;" newline="True"/>
+                                                                                    <input variable="editmenu"/>
+                                                                                </do>
+                                                                                <assign variable="netsalary1" expression="salarygiven[serialnum]+payments[serialnum]-dedection[serialnum]"/>
+                                                                                <assign variable="netsalary[serialnum]" expression="netsalary1"/>
+                                                                                <output expression="netsalary[serialnum]" newline="True"/>
+                                                                            </then>
+                                                                            <else/>
+                                                                        </if>
+                                                                    </else>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                        <output expression="&quot;press 1 to go back to manageinfo menu and anyother number to exit&quot;" newline="True"/>
+                                                        <input variable="manageinfo"/>
+                                                    </do>
+                                                </then>
+                                                <else>
+                                                    <if expression="m==3">
+                                                        <then>
+                                                            <do expression="a1==1">
+                                                                <output expression="&quot;enter the serial number of the user&quot;" newline="True"/>
+                                                                <input variable="serialnum"/>
+                                                                <output expression="&quot;press1 to manage employee alowance&#13;&#10;press 2 to manage due &#13;&#10;press3 to manage loan&quot;" newline="True"/>
+                                                                <input variable="a1"/>
+                                                                <if expression="a1==1">
+                                                                    <then>
+                                                                        <output expression="&quot;enter the employee allowance&quot;" newline="True"/>
+                                                                        <input variable="allowance[serialnum]"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <if expression="a1==2">
+                                                                            <then>
+                                                                                <output expression="&quot;enter the due amount&quot;" newline="True"/>
+                                                                                <input variable="due[serialnum]"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <if expression="a1==3">
+                                                                                    <then>
+                                                                                        <output expression="&quot;enter the loan amount&quot;" newline="True"/>
+                                                                                        <input variable="loan[serialnum]"/>
+                                                                                    </then>
+                                                                                    <else/>
+                                                                                </if>
+                                                                            </else>
+                                                                        </if>
+                                                                    </else>
+                                                                </if>
+                                                                <output expression="&quot;press 1 to go back to alloance menu and anypther to exit&quot;" newline="True"/>
+                                                                <input variable="a1"/>
+                                                            </do>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="m==4">
+                                                                <then>
+                                                                    <output expression="&quot;manage employee attendence&quot;" newline="True"/>
+                                                                    <do expression="atta==1">
+                                                                        <output expression="&quot;enter the serial number of the user&quot;" newline="True"/>
+                                                                        <input variable="serialnum"/>
+                                                                        <output expression="&quot;to update the leave of the employee press 1&quot;" newline="True"/>
+                                                                        <output expression="&quot;to enter the entry and exit time press 2&quot;" newline="True"/>
+                                                                        <input variable="atta"/>
+                                                                        <if expression="atta==1">
+                                                                            <then>
+                                                                                <output expression="&quot;enter the date of absent or leave of the employee&quot;" newline="True"/>
+                                                                                <input variable="leave[serialnum]"/>
+                                                                                <output expression="&quot;enter the month of the leave&quot;" newline="True"/>
+                                                                                <input variable="leavemonth[serialnum]"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <if expression="atta==2">
+                                                                                    <then>
+                                                                                        <output expression="&quot;enter the date&quot;" newline="True"/>
+                                                                                        <input variable="date[serialnum]"/>
+                                                                                        <output expression="&quot;enter the month&quot;" newline="True"/>
+                                                                                        <input variable="month[serialnum]"/>
+                                                                                        <output expression="&quot;enter the entry time&quot;" newline="True"/>
+                                                                                        <input variable="entrytime[serialnum]"/>
+                                                                                        <output expression="&quot;enter the exittime&quot;" newline="True"/>
+                                                                                        <input variable="exittime[serialnum]"/>
+                                                                                        <assign variable="at" expression="1"/>
+                                                                                    </then>
+                                                                                    <else/>
+                                                                                </if>
+                                                                            </else>
+                                                                        </if>
+                                                                        <output expression="&quot;press 1 to manage attendance for other users and any other number to exit&quot;" newline="True"/>
+                                                                        <input variable="atta"/>
+                                                                    </do>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="m==5">
+                                                                        <then>
+                                                                            <output expression="&quot;employee events&quot;" newline="True"/>
+                                                                            <input variable="emploevent"/>
+                                                                            <output expression="&quot;enter the event date&quot;" newline="True"/>
+                                                                            <input variable="emploeventdate"/>
+                                                                            <output expression="&quot;enter the month of the event in words&quot;" newline="True"/>
+                                                                            <input variable="emploeventmonth"/>
+                                                                            <output expression="&quot;event has been updated&quot;" newline="True"/>
+                                                                            <assign variable="w" expression="1"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="m==6">
+                                                                                <then>
+                                                                                    <do expression="v==1">
+                                                                                        <output expression="&quot;to view leave granted list press 1&quot;" newline="True"/>
+                                                                                        <output expression="&quot;to view dates of leave press 2&quot;" newline="True"/>
+                                                                                        <output expression="&quot;to view total number of leave press 3&quot;" newline="True"/>
+                                                                                        <output expression="&quot;to view remaining request press 4&quot;" newline="True"/>
+                                                                                        <input variable="o"/>
+                                                                                        <if expression="o==1">
+                                                                                            <then>
+                                                                                                <output expression="&quot;granted list is&quot; &amp; leaveagreed" newline="True"/>
+                                                                                            </then>
+                                                                                            <else>
+                                                                                                <if expression="o==2">
+                                                                                                    <then>
+                                                                                                        <output expression="&quot;enter the number of leave dates to be updated&quot;" newline="True"/>
+                                                                                                        <input variable="g"/>
+                                                                                                        <for variable="h" start="0" end="g-1" direction="inc" step="1">
+                                                                                                            <output expression="&quot;enter the leave dates&quot;" newline="True"/>
+                                                                                                            <input variable="leavedate[h]"/>
+                                                                                                            <output expression="&quot;enter the respective month&quot;" newline="True"/>
+                                                                                                            <input variable="leavemonth[h]"/>
+                                                                                                        </for>
+                                                                                                        <output expression="&quot;leave dates and month are uprdated&quot;" newline="True"/>
+                                                                                                    </then>
+                                                                                                    <else>
+                                                                                                        <if expression="o==3">
+                                                                                                            <then>
+                                                                                                                <output expression="&quot;total number of leave is&quot; &amp; g" newline="True"/>
+                                                                                                            </then>
+                                                                                                            <else>
+                                                                                                                <if expression="o==4">
+                                                                                                                    <then>
+                                                                                                                        <for variable="s" start="0 " end="p-1" direction="inc" step="1">
+                                                                                                                            <if expression="x!=0">
+                                                                                                                                <then>
+                                                                                                                                    <if expression="q[s]==0">
+                                                                                                                                        <then>
+                                                                                                                                            <output expression="&quot;no leave request&quot;" newline="True"/>
+                                                                                                                                        </then>
+                                                                                                                                        <else>
+                                                                                                                                            <output expression="&quot;request of leave for employee&quot; &amp; username1[s] &amp; &quot; is form&quot; &amp; q[s] &amp; &quot;to&quot; &amp; r[s] &amp; &quot;in the month of&quot; &amp; u[s]" newline="True"/>
+                                                                                                                                            <output expression="&quot;reason for empolyee leave is &quot; &amp; j[s]" newline="True"/>
+                                                                                                                                            <output expression="&quot;if leave is granted press 1 if denied press 2&quot;" newline="True"/>
+                                                                                                                                            <input variable="leavegranted"/>
+                                                                                                                                            <if expression="leavegranted==1">
+                                                                                                                                                <then>
+                                                                                                                                                    <assign variable="leaveagreed" expression="leaveagreed+1"/>
+                                                                                                                                                </then>
+                                                                                                                                                <else/>
+                                                                                                                                            </if>
+                                                                                                                                        </else>
+                                                                                                                                    </if>
+                                                                                                                                </then>
+                                                                                                                                <else>
+                                                                                                                                    <output expression="&quot;there is no request for leave&quot;" newline="True"/>
+                                                                                                                                </else>
+                                                                                                                            </if>
+                                                                                                                        </for>
+                                                                                                                    </then>
+                                                                                                                    <else/>
+                                                                                                                </if>
+                                                                                                            </else>
+                                                                                                        </if>
+                                                                                                    </else>
+                                                                                                </if>
+                                                                                            </else>
+                                                                                        </if>
+                                                                                        <output expression="&quot;press 1 to manage employee leave and any puther to exit&quot;" newline="True"/>
+                                                                                        <input variable="v"/>
+                                                                                    </do>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <if expression="m==7">
+                                                                                        <then>
+                                                                                            <output expression="&quot;employee training record&quot;" newline="True"/>
+                                                                                            <output expression="&quot;enter the serial number of the employee&quot;" newline="True"/>
+                                                                                            <input variable="serialnum"/>
+                                                                                            <output expression="&quot;enter the place or previouswork or a freasher&quot;" newline="True"/>
+                                                                                            <input variable="previouswork[serialnum]"/>
+                                                                                            <output expression="&quot;enter the experence&quot;" newline="True"/>
+                                                                                            <input variable="experience[serialnum]"/>
+                                                                                            <assign variable="training" expression="training+1"/>
+                                                                                        </then>
+                                                                                        <else>
+                                                                                            <if expression="m==8">
+                                                                                                <then>
+                                                                                                    <do expression="performance==1">
+                                                                                                        <output expression="&quot;employee performance&quot;" newline="True"/>
+                                                                                                        <output expression="&quot;enter the serial number&quot;" newline="True"/>
+                                                                                                        <input variable="serialnum"/>
+                                                                                                        <output expression="&quot;enter wheather the employees performance is excellent, good ,can do better, bad or worst&quot;" newline="True"/>
+                                                                                                        <input variable="emploperf[serialnum]"/>
+                                                                                                        <output expression="&quot;press 1 to enter other employees performance report or press anyother key to exit&quot;" newline="True"/>
+                                                                                                        <input variable="performance"/>
+                                                                                                        <assign variable="perf" expression="1"/>
+                                                                                                    </do>
+                                                                                                </then>
+                                                                                                <else>
+                                                                                                    <if expression="m==9">
+                                                                                                        <then>
+                                                                                                            <output expression="&quot;logout&quot;" newline="True"/>
+                                                                                                        </then>
+                                                                                                        <else/>
+                                                                                                    </if>
+                                                                                                </else>
+                                                                                            </if>
+                                                                                        </else>
+                                                                                    </if>
+                                                                                </else>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                    <output expression="&quot;press 1 to adminstrative pannel&quot;" newline="True"/>
+                                    <output expression="&quot; any other to exit&quot;" newline="True"/>
+                                    <input variable="z"/>
+                                </do>
+                            </then>
+                            <else>
+                                <breakpoint/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;press 1 to enter main menu or anyother key to exit&quot;" newline="True"/>
+                <input variable="y"/>
+            </do>
+        </body>
+    </function>
+    <function name="editinfo" type="None" variable="">
+        <parameters>
+            <parameter name="serialnum" type="Integer" array="False"/>
+            <parameter name="infoadd" type="String" array="True"/>
+            <parameter name="salarygiven" type="Integer" array="True"/>
+            <parameter name="payments" type="Integer" array="True"/>
+            <parameter name="dedection" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="l1" type="Integer" array="False" size=""/>
+            <output expression="&quot;press1 to delete general inforation&#13;&#10;press 2 to delete salary given&#13;&#10;press3 to delete payments&#13;&#10;press4 to delete dedection amount&quot;" newline="True"/>
+            <input variable="l1"/>
+            <if expression="l1==1">
+                <then>
+                    <assign variable="infoadd[serialnum]" expression="&quot;not mentioned&quot;"/>
+                </then>
+                <else>
+                    <if expression="l1==2">
+                        <then>
+                            <assign variable="salarygiven[serialnum]" expression="0"/>
+                        </then>
+                        <else>
+                            <if expression="l1==3">
+                                <then>
+                                    <assign variable="payments[serialnum]" expression="0"/>
+                                </then>
+                                <else>
+                                    <if expression="l1=4">
+                                        <then>
+                                            <assign variable="dedection[serialnum]" expression="0"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="employeeevent" type="None" variable="">
+        <parameters>
+            <parameter name="emploevent" type="String" array="False"/>
+            <parameter name="emploeventdate" type="Integer" array="False"/>
+            <parameter name="emploeventmonth" type="String" array="False"/>
+        </parameters>
+        <body>
+            <output expression="emploevent" newline="True"/>
+            <output expression="&quot;date is&quot; &amp; emploeventdate &amp;&quot;in the month of&quot; &amp; emploeventmonth" newline="True"/>
+        </body>
+    </function>
+    <function name="manageattendance" type="None" variable="">
+        <parameters>
+            <parameter name="e" type="Integer" array="False"/>
+            <parameter name="date" type="Integer" array="True"/>
+            <parameter name="month" type="String" array="True"/>
+            <parameter name="entrytime" type="Real" array="True"/>
+            <parameter name="exittime" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <output expression="&quot; In the date of&quot; &amp; date[e] &amp; &quot; month &quot; &amp; month[e] &amp; &#13;&#10;&quot; is &quot; &amp; entrytime[e] &amp; &quot; exit time is &quot; &amp; exittime[e]" newline="True"/>
+        </body>
+    </function>
+    <function name="salarydetails" type="None" variable="">
+        <parameters>
+            <parameter name="e" type="Integer" array="False"/>
+            <parameter name="payments" type="Integer" array="True"/>
+            <parameter name="dedection" type="Integer" array="True"/>
+            <parameter name="netsalary" type="Integer" array="True"/>
+            <parameter name="duration" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <do expression="i==4">
+                <output expression="&quot;SALARY DETAILS&quot;" newline="True"/>
+                <output expression="&quot;To check payments and deduction press 1&quot;" newline="True"/>
+                <output expression="&quot;to view net salary press 2&quot;" newline="True"/>
+                <output expression="&quot;To view duration press 3&quot;" newline="True"/>
+                <input variable="i"/>
+                <if expression="i==1">
+                    <then>
+                        <output expression="&quot;payments and deduction are&quot; &amp; payments[e] &amp;&quot;and&quot; &amp; dedection[e]" newline="True"/>
+                        <output expression="&quot;press 4 to view salary details and anyother to exit&quot;" newline="True"/>
+                        <input variable="i"/>
+                    </then>
+                    <else>
+                        <if expression="i==2">
+                            <then>
+                                <output expression="&quot;net salary is &quot; &amp; netsalary[e]" newline="True"/>
+                                <output expression="&quot;press 4 to view salary details and anyother to exit&quot;" newline="True"/>
+                                <input variable="i"/>
+                            </then>
+                            <else>
+                                <if expression="i==3">
+                                    <then>
+                                        <output expression="&quot;duration is&quot; &amp; duration[e]" newline="True"/>
+                                        <output expression="&quot;press 4 to view salary details and anyother to exit&quot;" newline="True"/>
+                                        <input variable="i"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1627529485 source:c:\naren\naren\sem2\csc\project\employee management system\employee managment system\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
